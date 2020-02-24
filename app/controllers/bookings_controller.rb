@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
   def index
-    if @user.id =
+
   end
 
   def show
