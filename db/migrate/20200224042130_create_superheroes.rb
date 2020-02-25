@@ -1,6 +1,6 @@
-class CreateSuperheros < ActiveRecord::Migration[5.2]
+class CreateSuperheroes < ActiveRecord::Migration[5.2]
   def change
-    create_table :superheros do |t|
+    create_table :superheroes do |t|
       t.string :name
       t.string :description
       t.references :user, foreign_key: true
