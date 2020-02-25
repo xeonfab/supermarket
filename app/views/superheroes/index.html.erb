@@ -1,4 +1,12 @@
+  <div class="banner">
+    <div class="container">
+      <h1>SuperMarket brings <strong>HEROES</strong> and <strong>GRANDMAS</strong> together!</h1>
+      <p>Change your life by renting a superhero or an old lady</p>
+      <a class="btn btn-flat" href="#">Start browsing!</a>
+    </div>
+  </div>
 <div class="main-container">
+
   <% @superheroes.each do |superhero| %>
 
     <div class="card-superhero">
@@ -6,12 +14,7 @@
 
       <div class="card-superhero-infos">
         <h2><%= superhero.name %></h2>
-        <p><%= superhero.description %></p>
-        <p>Age: <%= superhero.age %></p>
         <p>Superpower: <%= superhero.superpower %></p>
-        <p>Brains: <%= superhero.brains %></p>
-        <p>Strength: <%= superhero.strength %></p>
-        <p>Speed: <%= superhero.speed %></p>
         <p>Price: <%= superhero.price %></p>
         <p>Location: <%= superhero.location %></p>
       </div>
