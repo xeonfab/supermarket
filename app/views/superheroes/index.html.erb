@@ -1,13 +1,23 @@
+<h1>Super Market</h1>
+
 <div class="main-container">
-<h1> Superheroes for Rent</h1>
   <% @superheroes.each do |superhero| %>
-  <div class="card" style="width: 350px; background-image: url(<%= superhero.image %>);">
-<!--     <img src="..." class="card-img-top" alt="..."> -->
-      <div class="card-body">
-        <h5 class="card-title"><%= superhero[:name] %></h5>
-        <p class="card-text"><%= superhero[:location] %></p>
-        <%= link_to "See the Hero" , superhero_path, style:"text-decoration: none; color: black"%>
-      </div>
+
+  <div class="card-superhero">
+    <%= image_tag superhero[:image], alt: "alttext", class: "card-img-top"  %>
+
+    <div class="card-superhero-infos">
+      <h2><%= superhero.name %></h2>
+      <p><%= superhero.description %></p>
+      <p>Age: <%= superhero.age %></p>
+      <p>Superpower: <%= superhero.superpower %></p>
+      <p>Brains: <%= superhero.brains %></p>
+      <p>Strength: <%= superhero.strength %></p>
+      <p>Speed: <%= superhero.speed %></p>
+      <p>Price: <%= superhero.price %></p>
+      <p>Location: <%= superhero.location %></p>
+
+    </div>
   </div>
   <% end %>
 </div>
