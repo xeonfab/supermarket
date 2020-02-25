@@ -1,0 +1,35 @@
+<div>
+
+  <div class="d-flex align-items-center banner">
+    <div class="container d-flex align-items-center">
+      <div class="nav-item">
+        <%= link_to "Back", request.referer.present? ? request.referer : root_path, class: "back-button"%>
+      </div>
+      <h2 style="font-size: 25px">    Edit your Superhero</h2>
+    </div>
+  </div>
+
+<div class="background2">
+  <div class="container container-body">
+    <div class="new-form-body">
+        <div class="simple-form central" >
+          <%= simple_form_for(@superhero) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :superpower, :collection => %w[Absorption Acrobatics Agility Apathy Anti-Gravity Aura Banish Bloodlust Camouflage Danmaku Dexterity Durability Elasticity Endurance Empathy Flamethrower Flight Fusion Gliding Hacking Hyperkinesis Immortality Insanity Invisibility Levitation Necromancy Orbing Paralysis Phasing Projection Salvation Sonar Shapeshifting Stealth Telepathy Vision-heat Wallcrawling Zenith] %>
+          <%= f.input :price %>
+          <%= f.input :brains %>
+          <%= f.input :strength %>
+          <%= f.input :speed %>
+          <%= f.input :location %>
+           <button type="submit" class="btn btn-outline-primary">Submit</button>
+           <%= link_to "<button class='btn btn-outline-primary'>Cancel</button>".html_safe, root_path %>
+          <% end %>
+        </div>
+        <div class="edit-img" style="width: 450px;">
+          <%= image_tag @superhero[:image], alt: "alttext", class: "card-img-top"  %>
+        </div>
+    </div>
+  </div>
+</div>
+
