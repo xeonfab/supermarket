@@ -1,15 +1,23 @@
-    <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-lg" %>
+<h1>Super Market</h1>
+
+<div class="main-container">
+  <%  %>
+
+  <div class="card-superhero">
+    <%= image_tag superhero[:image], alt: "alttext", class: "card-img-top"  %>
+
+    <div class="card-superhero-infos">
+      <h2><%= superhero.name %></h2>
+      <p><%= superhero.description %></p>
+      <p>Age: <%= superhero.age %></p>
+      <p>Superpower: <%= superhero.superpower %></p>
+      <p>Brains: <%= superhero.brains %></p>
+      <p>Strength: <%= superhero.strength %></p>
+      <p>Speed: <%= superhero.speed %></p>
+      <p>Price: <%= superhero.price %></p>
+      <p>Location: <%= superhero.location %></p>
+
+    </div>
   </div>
+
 </div>
-<div class="container">
-  <div class="row">
-    <% @superheroes.each do |superhero| %>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on');">
-          <div class="card-description">
-            <h2><%= superhero.name %></h2>
-          </div>
-          <%= link_to "", superhero_path(superhero), class: 'card-link' %>
-        </div>
-      </div>
-    <% end %>
