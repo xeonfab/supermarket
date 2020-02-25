@@ -1,0 +1,42 @@
+.main-container {
+  margin: 0 auto;
+  width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+  align-items: center;
+}
+
+.card-superhero {
+  border: 2px solid #E7E7E7;
+  border-radius: 4px;
+  padding: .5rem;
+  height: 720px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-superhero img {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-superhero h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-superhero p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-superhero .card-superhero-infos {
+  padding: 16px;
+}
