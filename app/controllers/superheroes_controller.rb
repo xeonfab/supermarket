@@ -17,7 +17,8 @@ class SuperheroesController < ApplicationController
 
   def create
     @superhero = Superhero.new(superhero_params)
-    if @superhero.save
+    @superhero.user = current_user
+    if @superhero.save!
       redirect_to superheroes_path(@superhero)
     else
       render :new
@@ -37,12 +38,13 @@ class SuperheroesController < ApplicationController
 
   def destroy
     @superhero = Superhero.find(params[:id])
+    redirect_to root_path
   end
 
   private
 
   def superhero_params
-    params.require(:superhero).permit(:name, :description, :age, :superpower, :strength, :brains, :speed, :price, :location)
+    params.require(:superhero).permit(:name, :description, :age, :superpower, :strength, :brains, :speed, :price, :location, :image)
   end
 
 end

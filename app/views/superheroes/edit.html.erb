@@ -18,16 +18,21 @@
           <%= f.input :description %>
           <%= f.input :superpower, :collection => %w[Absorption Acrobatics Agility Apathy Anti-Gravity Aura Banish Bloodlust Camouflage Danmaku Dexterity Durability Elasticity Endurance Empathy Flamethrower Flight Fusion Gliding Hacking Hyperkinesis Immortality Insanity Invisibility Levitation Necromancy Orbing Paralysis Phasing Projection Salvation Sonar Shapeshifting Stealth Telepathy Vision-heat Wallcrawling Zenith] %>
           <%= f.input :price %>
-          <%= f.input :brains %>
-          <%= f.input :strength %>
-          <%= f.input :speed %>
+          <%= f.input :brains, collection: 0..100 %>
+          <%= f.input :strength, collection: 0..100 %>
+          <%= f.input :speed, collection: 0..100 %>
           <%= f.input :location %>
+          <%= f.input :image %>
            <button type="submit" class="btn btn-outline-primary">Submit</button>
            <%= link_to "<button class='btn btn-outline-primary'>Cancel</button>".html_safe, root_path %>
           <% end %>
         </div>
         <div class="edit-img" style="width: 450px;">
-          <%= image_tag @superhero[:image], alt: "alttext", class: "card-img-top"  %>
+          <% if @superhero.image != nil %>
+          <%= image_tag @superhero.image, alt: "alttext", class: "card-img-top"  %>
+          <% else  %>
+            <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Front_cover%2C_%22Wow_Comics%22_no._38_%28art_by_Jack_Binder%29.jpg', height: 600 %>
+          <% end %>
         </div>
     </div>
   </div>
