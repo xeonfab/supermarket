@@ -24,6 +24,11 @@ h2 {
 .new-form-img img {
   width: 700px;
   margin-top: 24px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.edit-img {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .new-form-body{
@@ -36,6 +41,7 @@ h2 {
   border-top: 0px solid black;
   border-right: 5px solid black;
   border-left: 5px solid black;
+  border-bottom: 5px solid black;
   padding-top: 32px;
 }
 
@@ -48,6 +54,21 @@ h2 {
   background-position: center;
 }
 
+.background2 {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("superman.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .simple-form {
   width: 375px;
+  padding-bottom: 16px;
+}
+
+.central {
+  display: flex;
+  justify-content: space-around;
 }

@@ -1,5 +1,5 @@
 class SuperheroesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :show, :new ]
+  skip_before_action :authenticate_user!, only: [ :index, :show, :new]
 
   def index
     @superheroes = Superhero.all
@@ -25,10 +25,13 @@ class SuperheroesController < ApplicationController
   end
 
   def edit
+     @superhero = Superhero.find(params[:id])
   end
 
   def update
+    @superhero = Superhero.find(params[:id])
     @superhero.update(superhero_params)
+
     redirect_to superheroes_path(@superhero)
   end
 
@@ -39,7 +42,7 @@ class SuperheroesController < ApplicationController
   private
 
   def superhero_params
-    params.require(:superhero).permit(:name, :description, :age, :superpower, :strength, :speed, :price, :location)
+    params.require(:superhero).permit(:name, :description, :age, :superpower, :strength, :brains, :speed, :price, :location)
   end
 
 end

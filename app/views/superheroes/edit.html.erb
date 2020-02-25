@@ -5,14 +5,14 @@
       <div class="nav-item">
         <%= link_to "Back", request.referer.present? ? request.referer : root_path, class: "back-button"%>
       </div>
-      <h2 style="font-size: 25px">    Add a Superhero</h2>
+      <h2 style="font-size: 25px">    Edit your Superhero</h2>
     </div>
   </div>
 
-<div class="background1">
+<div class="background2">
   <div class="container container-body">
     <div class="new-form-body">
-        <div class="simple-form" >
+        <div class="simple-form central" >
           <%= simple_form_for(@superhero) do |f| %>
           <%= f.input :name %>
           <%= f.input :description %>
@@ -26,9 +26,10 @@
            <%= link_to "<button class='btn btn-outline-primary'>Cancel</button>".html_safe, root_path %>
           <% end %>
         </div>
-        <div class="new-form-img">
-          <%= image_tag "superheroes.jpg"%>
+        <div class="edit-img" style="width: 450px;">
+          <%= image_tag @superhero[:image], alt: "alttext", class: "card-img-top"  %>
         </div>
     </div>
   </div>
 </div>
+
