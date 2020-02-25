@@ -1,9 +1,53 @@
-// .new.banner{
+.back-button {
+  color: black;
+  font-size: 12px;
+  background-color: white;
+  border: 1px solid #4A4A4A;
+  padding: 4px 4px;
+  border-radius: 8px;
+  font-weight: lighter;
+  height: 20px;
+  transition: opacity 0.3s ease;
+}
 
+.back-button:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: darkgrey;
+}
 
-// }
+h2 {
+  padding-left: 16px;
+  margin: 0;
+}
 
+.new-form-img img {
+  width: 700px;
+  margin-top: 24px;
+}
 
-.new-container{
-  width: 80vw;
+.new-form-body{
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-body {
+  background-color: white;
+  border-top: 0px solid black;
+  border-right: 5px solid black;
+  border-left: 5px solid black;
+  padding-top: 32px;
+}
+
+.background1 {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("2652.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.simple-form {
+  width: 375px;
 }
