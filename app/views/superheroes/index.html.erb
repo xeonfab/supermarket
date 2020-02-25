@@ -1,1 +1,13 @@
-<h1>Hey</h1>
+<div class="main-container">
+<h1> Superheroes for Rent</h1>
+  <% @superheroes.each do |superhero| %>
+  <div class="card" style="width: 350px; background-image: url(<%= superhero.image %>);">
+<!--     <img src="..." class="card-img-top" alt="..."> -->
+      <div class="card-body">
+        <h5 class="card-title"><%= superhero[:name] %></h5>
+        <p class="card-text"><%= superhero[:location] %></p>
+        <%= link_to "See the Hero" , superhero_path, style:"text-decoration: none; color: black"%>
+      </div>
+  </div>
+  <% end %>
+</div>
