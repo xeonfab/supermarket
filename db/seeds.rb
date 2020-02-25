@@ -33,13 +33,53 @@ spiderman = Superhero.create!(
   price: 350,
   location: "New York")
 
-superman = Superhero.create!(
-  name: "Superman",
+catwoman = Superhero.create!(
+  name: "Catwoman",
   user: ollie,
-  image: "https://i.pinimg.com/474x/24/85/6d/24856dc11e14d1a6d37a6cc2561009bb--batman-superhero-superhero-ideas.jpg",
+  image: "https://images-na.ssl-images-amazon.com/images/I/51uPyDr8fkL._SX408_BO1,204,203,200_.jpg",
   description: "Superman's powers include incredible strength, the ability to fly. X-ray vision, super speed, invulnerability to most attacks, super hearing, and super breath. He is nearly unstoppable. However, Superman does have one weakness, Kryptonite.",
   age: 16,
   superpower: "Flying",
+  brains: 90,
+  strength: 99,
+  speed: 95,
+  price: 49,
+  location: "London")
+
+flash = Superhero.create!(
+  name: "Ollie",
+  user: ollie,
+  image: "https://i.pinimg.com/474x/be/ff/ee/beffee250d789de4c26434de502b188e--cosplay-fail-flash-cosplay.jpg",
+  description: "Superman's powers include incredible strength, the ability to fly. X-ray vision, super speed, invulnerability to most attacks, super hearing, and super breath. He is nearly unstoppable. However, Superman does have one weakness, Kryptonite.",
+  age: 16,
+  superpower: "Flying",
+  brains: 90,
+  strength: 99,
+  speed: 95,
+  price: 49,
+  location: "London")
+
+
+flash = Superhero.create!(
+  name: "Hulk",
+  user: ollie,
+  image: "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/765181/765181._SX360_QL80_TTD_.jpg",
+  description: "Superman's powers include incredible strength, the ability to fly. X-ray vision, super speed, invulnerability to most attacks, super hearing, and super breath. He is nearly unstoppable. However, Superman does have one weakness, Kryptonite.",
+  age: 16,
+  superpower: "Flying",
+  brains: 90,
+  strength: 99,
+  speed: 95,
+  price: 49,
+  location: "London")
+
+flash = Superhero.create!(
+  name: "Wonder Woman",
+  user: ollie,
+  image: "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/263932/DIG063347_1._SX360_QL80_TTD_.jpg",
+  description: "Superman's powers include incredible strength, the ability to fly. X-ray vision, super speed, invulnerability to most attacks, super hearing, and super breath. He is nearly unstoppable. However, Superman does have one weakness, Kryptonite.",
+  age: 16,
+  superpower: "Boobs",
   brains: 90,
   strength: 99,
   speed: 95,
