@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  height: 80px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,10 +9,19 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 180px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
-.logo1 {
-  width: 250px;
-  height: 100px;
+
+.add-superhero-button {
+  color: white !important;
+  border-radius: 8px;
+  font-family: 'Montserrat', ;
+  text-align: center;
+  background-color: #0C3293;
+  margin-right: 16px;
+
+
 }
