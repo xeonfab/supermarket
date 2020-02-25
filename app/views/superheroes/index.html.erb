@@ -2,8 +2,9 @@
   <% @superheroes.each do |superhero| %>
 
     <div class="card-superhero">
-      <%= image_tag superhero[:image], alt: "alttext", class: "card-img-top"  %>
-
+      <% if superhero.image != nil %>
+      <%= image_tag superhero.image, alt: "alttext", class: "card-img-top"  %>
+      <% end %>
       <div class="card-superhero-infos">
         <h2><%= superhero.name %></h2>
         <p><%= superhero.description %></p>

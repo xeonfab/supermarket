@@ -13,5 +13,9 @@
     <p>Location: <%= @superhero.location %></p>
 
     <%= render "bookings/new", superhero: @superhero, booking: @booking %>
+
+    <%= link_to "Delete", superheroes_path,
+      method: :delete,
+      data: { confirm: "Are you sure?" }, class: 'btn btn-primary' %>
   </div>
 </div>
