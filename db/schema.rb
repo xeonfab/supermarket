@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_062408) do
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
-  create_table "superheros", force: :cascade do |t|
+  create_table "superheroes", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.bigint "user_id"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_062408) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
-    t.index ["user_id"], name: "index_superheros_on_user_id"
+    t.index ["user_id"], name: "index_superheroes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 2020_02_24_062408) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "superheros"
+  add_foreign_key "bookings", "superheroes"
   add_foreign_key "bookings", "users"
   add_foreign_key "reviews", "bookings"
-  add_foreign_key "superheros", "users"
+  add_foreign_key "superheroes", "users"
 end
