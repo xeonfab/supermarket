@@ -1,0 +1,6 @@
+<h3>Book a superhero</h3>
+<%= simple_form_for [superhero, booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
