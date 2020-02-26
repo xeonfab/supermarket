@@ -11,7 +11,12 @@ class PagesController < ApplicationController
 
   def my_bookings
       @my_bookings = Booking.where(user: current_user)
+  end
 
+  def destroy
+    @superhero = Superhero.find(params[:id])
+    @superhero.destroy
+    redirect_to superheroes_path
   end
 
 end

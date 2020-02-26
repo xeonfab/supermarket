@@ -13,8 +13,9 @@
       <p>Available</p>
     </div>
     <div class="last">
-      <%= link_to "Edit", "#", class: "btn btn-gradient" %>
-      <%= link_to "Delete", "#", class: "btn btn-gradient" %>
+      <%= link_to "Edit", edit_superhero_path(mysuperhero), class: "btn btn-gradient" %>
+      <%= link_to "Delete", superhero_path(mysuperhero), method: :delete, class: "btn btn-gradient" %>
+
       <p><%= mysuperhero.age %></p>
       <p><%= mysuperhero.superpower %></p>
        <p><%= mysuperhero.brains %></p>
