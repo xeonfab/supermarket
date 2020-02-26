@@ -1,10 +1,19 @@
-  <div class="banner-home">
-    <div class="container">
-      <h1>SuperMarket brings <strong>HEROES</strong> and <strong>GRANDMAS</strong> together!</h1>
-      <p>Change your life by renting a superhero or an old lady</p>
-      <a class="btn btn-flat" href="#">Start browsing!</a>
-    </div>
+<div class="banner-home">
+  <div class="container">
+    <h1>SuperMarket brings <strong>HEROES</strong> and <strong>GRANDMAS</strong> together!</h1>
+    <p>Change your life by renting a superhero or an old lady</p>
+    <a class="btn btn-flat" href="#">Start browsing!</a>
   </div>
+</div>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+
 <div class="main-container">
 
   <% @superheroes.each do |superhero| %>
@@ -22,3 +31,4 @@
     </div>
   <% end %>
 </div>
+
