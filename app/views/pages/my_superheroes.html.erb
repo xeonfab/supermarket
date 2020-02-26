@@ -1,2 +1,29 @@
-<div class="banner">
+<nav class="nav" style="background-color: grey; height: 73px; align-items: center;">
+  <a class="nav-link active" href="<%= account_my_superheroes_path %>">My Superheroes</a>
+  <a class="nav-link" href="<%= account_my_bookings_path %>">Bookings</a>
+  <a class="nav-link" href="#">Profile</a>
+</nav>
+<div container-cards>
+  <% @my_superheroes.each do |mysuperhero| %>
+  <div class="card-superhero-account">
+    <img src="https://unsplash.com/photos/WjZ4eaHq9G4">
+    <div class="middle">
+      <h2><%= mysuperhero.name %></h2>
+      <p><%= mysuperhero.description %></p>
+      <p>Available</p>
+    </div>
+    <div class="last">
+      <%= link_to "Edit", "#", class: "btn btn-gradient" %>
+      <%= link_to "Delete", "#", class: "btn btn-gradient" %>
+      <p><%= mysuperhero.age %></p>
+      <p><%= mysuperhero.superpower %></p>
+       <p><%= mysuperhero.brains %></p>
+        <p><%= mysuperhero.strength %></p>
+         <p><%= mysuperhero.speed %></p>
+          <p><%= mysuperhero.location %></p>
+           <p><%= mysuperhero.price %></p>
+
+    </div>
+  </div>
+  <% end %>
 </div>

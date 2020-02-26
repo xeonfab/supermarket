@@ -5,24 +5,12 @@ class PagesController < ApplicationController
   end
 
   def my_superheroes
-    @my_superheroes = Superhero.all
+    @my_superheroes = Superhero.where(user: current_user)
   end
 
-  def show_owner_bookings
-    if @user.id = current_user
-      Booking.all
-    else
-      render 'user/new'
-    end
-  end
+  def my_bookings
+      @my_bookings = Booking.where(user: current_user)
 
-  def show_renter_bookings
-    if @user.id = current_user
-         # something awesome
-    else
-      # something different
-      render 'user/new'
-    end
   end
 
 end

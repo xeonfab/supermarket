@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'date'
 require "open-uri"
 
 puts 'Cleaning database...'
@@ -124,6 +126,14 @@ wonder = Superhero.create!(
   speed: 95,
   price: 49,
   location: "London")
+
+Booking.create!(
+  user: ollie,
+  superhero: flash,
+  price: 15,
+  start_date: Date.new(2001,2,3),
+  end_date: Date.new(2001,2,3)
+  )
 
 wonder_image = URI.open("https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/263932/DIG063347_1._SX360_QL80_TTD_.jpg")
 wonder.photo.attach(io: wonder_image, filename: 'wonderwoman.jpg', content_type: 'image/jpg')
