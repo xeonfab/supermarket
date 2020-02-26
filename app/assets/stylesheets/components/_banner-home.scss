@@ -11,7 +11,7 @@
   background-size: cover;
   background-position: center;
   background-image: asset-url("homephoto.jpg");
-  height: 90px;
+  height: 100px;
 
 }
 
@@ -27,3 +27,24 @@
   line-height: 73px;
 }
 
+.map-position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 24px;
+}
+
+
+.map-position h1 {
+  color: black;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: bold;
+  font-family: Montserrat;
+  font-style: bold;
+  font-weight: 500;
+}
+
+.btn-map {
+  display: flex;
+  justify-content: space-between;
+}
