@@ -6,7 +6,7 @@
 <div container-cards>
   <% @my_superheroes.each do |mysuperhero| %>
   <div class="card-superhero-account">
-    <img src="https://unsplash.com/photos/WjZ4eaHq9G4">
+
     <div class="middle">
       <h2><%= mysuperhero.name %></h2>
       <p><%= mysuperhero.description %></p>
@@ -15,7 +15,6 @@
     <div class="last">
       <%= link_to "Edit", edit_superhero_path(mysuperhero), class: "btn btn-gradient" %>
       <%= link_to "Delete", superhero_path(mysuperhero), method: :delete, class: "btn btn-gradient" %>
-
       <p><%= mysuperhero.age %></p>
       <p><%= mysuperhero.superpower %></p>
        <p><%= mysuperhero.brains %></p>

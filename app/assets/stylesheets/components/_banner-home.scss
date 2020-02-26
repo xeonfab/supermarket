@@ -3,14 +3,14 @@
   background-position: center;
   padding: 150px 0;
 
-  background-image: url("homephoto.jpg");
+  background-image: asset-url("homephoto.jpg");
   height: 640px;
 }
 
 .banner-home1 {
   background-size: cover;
   background-position: center;
-  background-image: url("homephoto.jpg");
+  background-image: asset-url("homephoto.jpg");
   height: 90px;
 
 }
