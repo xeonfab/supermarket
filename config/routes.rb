@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :edit, :update, :destroy]
 
-  get 'pages/my_superheroes', to:'pages#my_superheroes'
-
+  get 'account/my_superheroes', to:'pages#my_superheroes'
+  get 'account/my_bookings', to:'pages#my_bookings'
 end

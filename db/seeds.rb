@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'date'
 
 puts 'Cleaning database...'
 Review.destroy_all if Rails.env.development?
@@ -86,5 +87,13 @@ flash = Superhero.create!(
   speed: 95,
   price: 49,
   location: "London")
+
+Booking.create!(
+  user: ollie,
+  superhero: flash,
+  price: 15,
+  start_date: Date.new(2001,2,3),
+  end_date: Date.new(2001,2,3)
+  )
 
 puts "Superheroes are ready!"
