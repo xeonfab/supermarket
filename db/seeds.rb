@@ -10,18 +10,23 @@ require 'date'
 require "open-uri"
 
 puts 'Cleaning database...'
-Review.destroy_all if Rails.env.development?
-Booking.destroy_all if Rails.env.development?
-Superhero.destroy_all if Rails.env.development?
-User.destroy_all if Rails.env.development?
+Review.destroy_all
+Booking.destroy_all
+Superhero.destroy_all
+User.destroy_all
 
 puts "Making the Superhero Grannys"
+
+spider_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
+
 ollie = User.create!(
   first_name: "Ollie",
   last_name: "Ayton",
-  email:"superhero@gmail.com",
+  email:"user@user.com",
   password: "password",
   password_confirmation: "password")
+
+ollie.avatar.attach(io: spider_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
 
 tom = User.create!(
   first_name: "tom",
@@ -29,6 +34,9 @@ tom = User.create!(
   email:"tom@gmail.com",
   password: "password",
   password_confirmation: "password")
+spider_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
+tom.avatar.attach(io: spider_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
+
 
 fabien = User.create!(
   first_name: "Fabien",
@@ -36,6 +44,8 @@ fabien = User.create!(
   email:"fabien@gmail.com",
   password: "password",
   password_confirmation: "password")
+spider_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
+fabien.avatar.attach(io: spider_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
 
 sean = User.create!(
   first_name: "Shaun",
@@ -43,6 +53,9 @@ sean = User.create!(
   email:"shaun@gmail.com",
   password: "password",
   password_confirmation: "password")
+spider_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
+sean.avatar.attach(io: spider_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
+
 
 sheila = User.create!(
   first_name: "Sheila",
@@ -50,6 +63,9 @@ sheila = User.create!(
   email:"sheila@gmail.com",
   password: "password",
   password_confirmation: "password")
+spider_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
+sheila.avatar.attach(io: spider_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
+
 
 spiderman = Superhero.create!(
   name: "Spiderman",
