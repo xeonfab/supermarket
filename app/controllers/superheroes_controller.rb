@@ -44,7 +44,7 @@ class SuperheroesController < ApplicationController
   private
 
   def superhero_params
-    params.require(:superhero).permit(:name, :description, :age, :superpower, :strength, :brains, :speed, :price, :location, :image)
+    params.require(:superhero).permit(:name, :description, :age, :superpower, :strength, :brains, :speed, :price, :location, :photo)
   end
 
 end
