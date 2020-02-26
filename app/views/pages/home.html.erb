@@ -41,13 +41,9 @@
         <p>Price: <%= superhero.price %></p>
         <p>Location: <%= superhero.location %></p>
       </div>
+      <%= link_to "More info", superhero_path(superhero), class: "btn btn-gradient" %>
     </div>
   <% end %>
   <%= link_to "All Superheroes", superheroes_path, class: "nav-link home-btn" %>
 
 </div>
-
-
-
-<%= link_to "Start browsing", superheroes_path, class: "btn btn-gradient" %>
-
