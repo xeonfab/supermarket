@@ -1,7 +1,14 @@
+
+  <div class="banner-home1">
+    <div class="container map-btn">
+      <%= link_to "See the map", "#", class: "btn btn-gradient1" %>
+    </div>
+  </div>
+
 <div class="banner-home">
   <div class="container">
-    <h1>SuperMarket brings <strong>HEROES</strong> and <strong>GRANDMAS</strong> together!</h1>
-    <p>Change your life by renting a superhero or an old lady</p>
+    <h1>SuperMarket brings <strong>HEROES</strong> together!</h1>
+    <p>Change your life by renting a superhero</p>
     <a class="btn btn-flat" href="#">Start browsing!</a>
   </div>
 </div>
@@ -13,6 +20,7 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
+
 
 <div class="main-container">
 
