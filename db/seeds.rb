@@ -92,7 +92,7 @@ catwoman = Superhero.create!(
   strength: 99,
   speed: 95,
   price: 49,
-  location: "London")
+  location: "Tokyo")
 
 cat_image = URI.open("https://images-na.ssl-images-amazon.com/images/I/51uPyDr8fkL._SX408_BO1,204,203,200_.jpg")
 catwoman.photo.attach(io: cat_image, filename: 'catwoman.jpg', content_type: 'image/jpg')
@@ -108,7 +108,7 @@ flash = Superhero.create!(
   strength: 99,
   speed: 95,
   price: 49,
-  location: "London")
+  location: "Melbourne")
 
 flash_image = URI.open("https://comicvine1.cbsistatic.com/uploads/original/4/46646/3357137-7502695545-25421.jpg")
 flash.photo.attach(io: flash_image, filename: 'flash.jpg', content_type: 'image/jpg')
@@ -125,7 +125,7 @@ hulk = Superhero.create!(
   strength: 99,
   speed: 95,
   price: 49,
-  location: "London")
+  location: "Paris")
 
 hulk_image = URI.open("https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/765181/765181._SX360_QL80_TTD_.jpg")
 hulk.photo.attach(io: hulk_image, filename: 'hulk.jpg', content_type: 'image/jpg')
@@ -141,7 +141,7 @@ wonder = Superhero.create!(
   strength: 99,
   speed: 95,
   price: 49,
-  location: "London")
+  location: "Berlin")
 
 Booking.create!(
   user: ollie,
