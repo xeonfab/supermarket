@@ -7,6 +7,8 @@
   </div>
 <div class="main-container">
 
+
+
   <% @superheroes.each do |superhero| %>
 
     <div class="card-superhero">
@@ -19,6 +21,9 @@
         <p>Price: <%= superhero.price %></p>
         <p>Location: <%= superhero.location %></p>
       </div>
+       <%= link_to "More info", superhero_path(superhero), class: "btn btn-gradient" %>
     </div>
   <% end %>
+  <%= link_to "Go back home", root_path, class: "btn btn-gradient" %>
 </div>
+
