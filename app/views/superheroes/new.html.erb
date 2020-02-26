@@ -1,6 +1,6 @@
 <div>
 
-  <div class="d-flex align-items-center banner">
+  <div class="d-flex align-items-center">
     <div class="container d-flex align-items-center">
       <div class="nav-item">
         <%= link_to "Back", request.referer.present? ? request.referer : root_path, class: "back-button"%>
@@ -22,7 +22,7 @@
           <%= f.input :strength, collection: 0..100 %>
           <%= f.input :speed, collection: 0..100 %>
           <%= f.input :location %>
-          <%= f.input :image %>
+          <%= f.input :photo, as: :file %>
            <button type="submit" class="btn btn-outline-primary">Submit</button>
            <%= link_to "<button class='btn btn-outline-primary'>Cancel</button>".html_safe, root_path %>
           <% end %>
