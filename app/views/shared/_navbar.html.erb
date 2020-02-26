@@ -17,7 +17,7 @@
           <%= link_to "Add a Super-hero", new_superhero_path, class: "nav-link add-superhero-button" %>
         </div>
         <div class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Profile", "#", class: "dropdown-item" %>
             <%= link_to "My Superheroes", account_my_superheroes_path, class: "dropdown-item" %>

@@ -1,17 +1,32 @@
-  <div class="banner-hp">
-    <div class="container">
-      <h1>SuperMarket brings <strong>HEROES</strong> and <strong>GRANDMAS</strong> together!</h1>
-      <p>Change your life by renting a superhero or an old lady</p>
-      <a class="btn btn-flat" href="#">Start browsing!</a>
-    </div>
+<div class="banner-home">
+  <div class="container">
+    <h1>SuperMarket brings <strong>HEROES</strong> and <strong>GRANDMAS</strong> together!</h1>
+    <p>Change your life by renting a superhero or an old lady</p>
+    <a class="btn btn-flat" href="#">Start browsing!</a>
   </div>
+</div>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+
 <div class="main-container">
+
+
 
   <% @superheroes.each do |superhero| %>
 
     <div class="card-superhero">
-      <% if superhero.image != nil %>
-      <%= image_tag superhero.image, alt: "alttext", class: "card-img-top"  %>
+      <% if superhero.photo.attached? %>
+        <%= cl_image_tag superhero.photo.key, height: 300, width: 400, crop: :fill %>
+       <% elsif superhero.image %>
+         <%= image_tag superhero[:image], alt: "alttext", class: "card-img-top"  %>
+      <% else %>
+        <p>no photo</p>
       <% end %>
       <div class="card-superhero-infos">
         <h2><%= superhero.name %></h2>
@@ -19,6 +34,9 @@
         <p>Price: <%= superhero.price %></p>
         <p>Location: <%= superhero.location %></p>
       </div>
+       <%= link_to "More info", superhero_path(superhero), class: "btn btn-gradient" %>
     </div>
   <% end %>
+  <%= link_to "Go back home", root_path, class: "btn btn-gradient" %>
 </div>
+

@@ -1,5 +1,11 @@
 <div class="card-superhero">
-  <%= image_tag @superhero[:image], alt: "alttext", class: "card-img-top"  %>
+  <% if @superhero.photo.attached? %>
+    <%= cl_image_tag @superhero.photo.key, height: 300, width: 400, crop: :fill %>
+  <% elsif @superhero.image %>
+    <%= image_tag @superhero[:image], alt: "alttext", class: "card-img-top"  %>
+  <% else %>
+    <p>No Photo</p>
+  <% end %>
 
   <div class="card-superhero-infos">
     <h2><%= @superhero.name %></h2>
@@ -18,4 +24,6 @@
       method: :delete,
       data: { confirm: "Are you sure?" }, class: 'btn btn-primary' %>
   </div>
+<%= link_to "Keep browsing", superheroes_path, class: "btn btn-gradient" %>
 </div>
+
