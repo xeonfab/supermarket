@@ -1,6 +1,9 @@
 class BookingsController < ApplicationController
 
   def index
+    raise
+    @user_bookings = Booking.all.select { |booking| booking.superhero.user == current_user}
+    @user_rentals = Booking.all.select { |booking| booking.user == current_user}
   end
 
   def show

@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'date'
 require "open-uri"
 
 puts 'Cleaning database...'
@@ -18,6 +20,34 @@ ollie = User.create!(
   first_name: "Ollie",
   last_name: "Ayton",
   email:"superhero@gmail.com",
+  password: "password",
+  password_confirmation: "password")
+
+tom = User.create!(
+  first_name: "tom",
+  last_name: "Haywood",
+  email:"tom@gmail.com",
+  password: "password",
+  password_confirmation: "password")
+
+fabien = User.create!(
+  first_name: "Fabien",
+  last_name: "Riou",
+  email:"fabien@gmail.com",
+  password: "password",
+  password_confirmation: "password")
+
+sean = User.create!(
+  first_name: "Shaun",
+  last_name: "Wrigley",
+  email:"shaun@gmail.com",
+  password: "password",
+  password_confirmation: "password")
+
+sheila = User.create!(
+  first_name: "Sheila",
+  last_name: "Sheelz",
+  email:"sheila@gmail.com",
   password: "password",
   password_confirmation: "password")
 
@@ -53,9 +83,9 @@ catwoman.photo.attach(io: cat_image, filename: 'catwoman.jpg', content_type: 'im
 
 flash = Superhero.create!(
   name: "Ollie",
-  user: ollie,
-  # image: "https://i.pinimg.com/474x/be/ff/ee/beffee250d789de4c26434de502b188e--cosplay-fail-flash-cosplay.jpg",
-  description: "Flash has super-speed. This not only enables him to run fast, but also translates into a number of additional powers. He can think, read, and react at incredible speeds. Also, he can vibrate at such a speed he can walk through walls.",
+  user: tom,
+  image: "https://i.pinimg.com/474x/be/ff/ee/beffee250d789de4c26434de502b188e--cosplay-fail-flash-cosplay.jpg",
+  description: "Superman's powers include incredible strength, the ability to fly. X-ray vision, super speed, invulnerability to most attacks, super hearing, and super breath. He is nearly unstoppable. However, Superman does have one weakness, Kryptonite.",
   age: 16,
   superpower: "Super-Speed",
   brains: 90,
@@ -70,7 +100,8 @@ flash.photo.attach(io: flash_image, filename: 'flash.jpg', content_type: 'image/
 
 hulk = Superhero.create!(
   name: "Hulk",
-  user: ollie,
+  user: sean,
+  image: "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/765181/765181._SX360_QL80_TTD_.jpg",
   description: "Superman's powers include incredible strength, the ability to fly. X-ray vision, super speed, invulnerability to most attacks, super hearing, and super breath. He is nearly unstoppable. However, Superman does have one weakness, Kryptonite.",
   age: 16,
   superpower: "Flying",
@@ -85,9 +116,9 @@ hulk.photo.attach(io: hulk_image, filename: 'hulk.jpg', content_type: 'image/jpg
 
 wonder = Superhero.create!(
   name: "Wonder Woman",
-  user: ollie,
-  # image: "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/263932/DIG063347_1._SX360_QL80_TTD_.jpg",
-  description: "Wonder Woman is a compassionate caring, stubborn, opinionated, highly competitive, outgoing, immortal Amazon. Wonder Woman is a warrior born. She tries to avoid conflict but if pressed she will engage in battle and on occasion lose herself in the pleasure of battle.",
+  user: fabien,
+  image: "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/263932/DIG063347_1._SX360_QL80_TTD_.jpg",
+  description: "Superman's powers include incredible strength, the ability to fly. X-ray vision, super speed, invulnerability to most attacks, super hearing, and super breath. He is nearly unstoppable. However, Superman does have one weakness, Kryptonite.",
   age: 16,
   superpower: "Boobs",
   brains: 90,
@@ -95,6 +126,14 @@ wonder = Superhero.create!(
   speed: 95,
   price: 49,
   location: "London")
+
+Booking.create!(
+  user: ollie,
+  superhero: flash,
+  price: 15,
+  start_date: Date.new(2001,2,3),
+  end_date: Date.new(2001,2,3)
+  )
 
 wonder_image = URI.open("https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/263932/DIG063347_1._SX360_QL80_TTD_.jpg")
 wonder.photo.attach(io: wonder_image, filename: 'wonderwoman.jpg', content_type: 'image/jpg')
