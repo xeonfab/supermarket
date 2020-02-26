@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 2020_02_26_031836) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_superheroes_on_user_id"
   end
 

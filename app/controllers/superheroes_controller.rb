@@ -3,6 +3,15 @@ class SuperheroesController < ApplicationController
 
   def index
     @superheroes = Superhero.all
+
+    @superheroes = Superhero.geocoded #returns superheroes with coordinates
+    @markers = @superheroes.map do |superhero|
+      {
+        lat: superhero.latitude,
+        lng: superhero.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { superhero: superhero })
+      }
+    end
   end
 
   def show
