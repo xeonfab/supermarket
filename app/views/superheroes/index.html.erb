@@ -19,8 +19,12 @@
   <% @superheroes.each do |superhero| %>
 
     <div class="card-superhero">
-      <% if superhero.image != nil %>
-      <%= image_tag superhero.image, alt: "alttext", class: "card-img-top"  %>
+      <% if superhero.photo.attached? %>
+        <%= cl_image_tag superhero.photo.key, height: 300, width: 400, crop: :fill %>
+       <% elsif superhero.image %>
+         <%= image_tag superhero[:image], alt: "alttext", class: "card-img-top"  %>
+      <% else %>
+        <p>no photo</p>
       <% end %>
       <div class="card-superhero-infos">
         <h2><%= superhero.name %></h2>
