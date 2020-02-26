@@ -42,12 +42,13 @@ class SuperheroesController < ApplicationController
     @superhero = Superhero.find(params[:id])
     @superhero.update(superhero_params)
 
-    redirect_to superheroes_path(@superhero)
+    redirect_to account_my_superheroes_path
   end
 
   def destroy
     @superhero = Superhero.find(params[:id])
-    redirect_to root_path
+    @superhero.destroy
+    redirect_to account_my_superheroes_path
   end
 
   private
