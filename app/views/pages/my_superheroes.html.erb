@@ -1,12 +1,12 @@
 <nav class="nav" style="background-color: grey; height: 73px; align-items: center;">
   <a class="nav-link active" href="<%= account_my_superheroes_path %>">My Superheroes</a>
   <a class="nav-link" href="<%= account_my_bookings_path %>">Bookings</a>
-  <a class="nav-link" href="#">Profile</a>
+   <a class="nav-link" href="<%= account_my_profile_path %>">Profile</a>
 </nav>
 <div container-cards>
   <% @my_superheroes.each do |mysuperhero| %>
   <div class="card-superhero-account">
-
+    <%= cl_image_tag mysuperhero.superhero.photo.key, alt: "alttext", class: "card-img-top"  %>
     <div class="middle">
       <h2><%= mysuperhero.name %></h2>
       <p><%= mysuperhero.description %></p>

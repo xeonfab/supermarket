@@ -2,55 +2,35 @@
   <div class="container-home">
     <div class="d-flex">
       <div class="left-home">
-        <h1>Find your best</h1>
-        <h1 class="pb-4">Superheroes Cards</h1>
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-8 offset-sm-2">
-                <%= form_tag superheroes_path, method: :get do %>
-                  <%= text_field_tag :query,
-                    params[:query],
-                    class: "form-control",
-                    placeholder: "Find a Superhero"
-                  %>
-                  <%= submit_tag "Search", class: "btn btn-primary" %>
-                <% end %>
-                <div id="superheroes">
-                  <% @superheroes.each do |superhero| %>
-                  <% end %>
-                </div>
-              </div>
-            </div>
+        <h1>Need a saviour? Rent one.</h1>
+        <div class="search-form-control form-group">
+          <%= form_tag superheroes_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control string required",
+              placeholder: "Find a Superhero" %>
+            <%= submit_tag "Search", class: "btn btn-flat" %>
+          <% end %>
+          <div id="superheroes">
+          <% @superheroes.each do |superhero| %>
+          <% end %>
           </div>
+        </div>
+      </div>
       <div class="spidercards">
-        <%= image_tag "spidercards.png", alt: "Spidercards", width: 450 %>
+        <%= image_tag "spidercards.png", alt: "Spidercards", height: 450 %>
       </div>
      </div>
-  </div>
+   </div>
 </div>
-
 
 <div class="main-container">
 
   <% @superheroes.each do |superhero| %>
-
-    <div class="card-superhero">
-      <% if superhero.photo.attached? %>
-        <%= cl_image_tag superhero.photo.key, height: 300, width: 400, crop: :fill %>
-       <% elsif superhero.image %>
-         <%= image_tag superhero[:image], alt: "alttext", class: "card-img-top"  %>
-      <% else %>
-        <p>no photo</p>
-      <% end %>
-      <div class="card-superhero-infos">
-        <h2><%= superhero.name %></h2>
-        <p>Superpower: <%= superhero.superpower %></p>
-        <p>Price: <%= superhero.price %></p>
-        <p>Location: <%= superhero.location %></p>
-      </div>
-      <%= link_to "More info", superhero_path(superhero), class: "btn btn-gradient" %>
-    </div>
+    <%= render partial: 'shared/card', locals: { superhero: superhero } %>
   <% end %>
-  <%= link_to "All Superheroes", superheroes_path, class: "nav-link home-btn" %>
 
 </div>
+
+
+

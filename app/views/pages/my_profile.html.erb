@@ -1,7 +1,23 @@
-<h1>Hello from the my profile page</h1>
-<div class="card-superhero-infos">
-    <p>First name: <%= current_user.first_name %></p>
-    <p>Last name: <%= current_user.last_name %></p>
-    <p>E-mail address: <%= current_user.email %></p>
-    <p>Account created: <%= current_user.created_at %></p>
+<div class="banner-home1">
+    <nav class="nav" style="">
+      <a class="nav-link active" href="<%= account_my_superheroes_path %>">My Superheroes</a>
+      <a class="nav-link" href="<%= account_my_bookings_path %>">Bookings</a>
+       <a class="nav-link" href="<%= account_my_profile_path %>">Profile</a>
+    </nav>
 </div>
+
+<div class="profile-container">
+  <div>
+    <h1>Your Profile</h1>
+  </div>
+  <div class="prof-img">
+  <%= cl_image_tag(current_user.avatar.key, width: 225, height: 225, crop: :thumb, radius: :max) %>
+  </div>
+  <p>First name: <%= current_user.first_name %></p>
+  <p>Last name: <%= current_user.last_name %></p>
+  <p>E-mail address: <%= current_user.email %></p>
+  <p>Account created: <%= current_user.created_at %></p>
+</div>
+
+
+
