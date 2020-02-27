@@ -1,11 +1,12 @@
 <div>
-
-  <div class="d-flex align-items-center banner">
-    <div class="container d-flex align-items-center">
-      <div class="nav-item">
-        <%= link_to "Back", request.referer.present? ? request.referer : root_path, class: "back-button"%>
+  <div class="banner-home1">
+    <div class="d-flex align-items-center banner">
+      <div class="container d-flex align-items-center">
+        <div class="nav-item">
+          <%= link_to "Back", request.referer.present? ? request.referer : root_path, class: "back-button"%>
+        </div>
+        <h2 style="font-size: 25px">    Edit your Superhero</h2>
       </div>
-      <h2 style="font-size: 25px">    Edit your Superhero</h2>
     </div>
   </div>
 
@@ -27,12 +28,14 @@
            <%= link_to "<button class='btn btn-outline-primary'>Cancel</button>".html_safe, account_my_superheroes_path %>
           <% end %>
         </div>
-        <div class="edit-img" style="width: 450px;">
-          <% if @superhero.image != nil %>
-          <%= image_tag @superhero.image, alt: "alttext", class: "card-img-top"  %>
-          <% else  %>
-            <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Front_cover%2C_%22Wow_Comics%22_no._38_%28art_by_Jack_Binder%29.jpg', height: 600 %>
-          <% end %>
+          <div class="cards-edit-new">
+          <div class="edit-img" style="width: 450px">
+            <% if @superhero.photo != nil %>
+            <%= cl_image_tag @superhero.photo.key, alt: "alttext", class: "card-img-top"  %>
+            <% else  %>
+              <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Front_cover%2C_%22Wow_Comics%22_no._38_%28art_by_Jack_Binder%29.jpg', height: 600 %>
+            <% end %>
+          </div>
         </div>
     </div>
   </div>

@@ -7,6 +7,25 @@
     </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <%= form_tag superheroes_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a Superhero"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+      <div id="superheroes">
+        <% @superheroes.each do |superhero| %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div>
   <div class="map-position">
       <div

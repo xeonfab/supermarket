@@ -1,0 +1,17 @@
+.signup-container {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+
+  background-image: asset-url("homephoto.jpg");
+  height: 850px;
+}
+
+.signupflex {
+  display: flex;
+  padding-right: 32px;
+}
+
+.columns {
+  padding: 16px;
+}

@@ -2,9 +2,25 @@ class SuperheroesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show, :new]
 
   def index
-    @superheroes = Superhero.all
+    if params[:query].present?
+      # sql_query = " \
+      #   superheroes.name @@ :query \
+      #   OR superheroes.location @@ :query \
+      #   OR users.first_name @@ :query \
+      #   OR users.last_name @@ :query \
+      # "
+      # @superheroes = Superhero.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+      terms = params[:query].gsub(/\s+/m, ' ').strip.split(" ")
+      @superheroes = []
+      terms.each do |term|
+        @superheroes << Superhero.global_search(term).to_a
+      end
+      @superheroes = @superheroes.flatten
 
-    @superheroes = Superhero.geocoded #returns superheroes with coordinates
+    else
+      @superheroes = Superhero.all
+    end
+    # @superheroes = Superhero.geocoded #returns superheroes with coordinates
     @markers = @superheroes.map do |superhero|
       {
         lat: superhero.latitude,
@@ -13,6 +29,7 @@ class SuperheroesController < ApplicationController
       }
     end
   end
+
 
   def show
     @superhero = Superhero.find(params[:id])

@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   get 'account/my_superheroes', to:'pages#my_superheroes'
   get 'account/my_bookings', to:'pages#my_bookings'
+  get 'account/my_profile', to:'pages#my_profile'
 end
