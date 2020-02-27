@@ -1,9 +1,15 @@
-<h1>hey</h1>
-<div class="simple-form" >
-          <%= simple_form_for([@superhero, @booking, @review]) do |f| %>
-          <%= f.input :description %>
-          <%= f.input :rating, collection: 0..5 %>
-          <button type="submit", class="btn btn-outline-primary">Save</button>
-           <%= link_to "<button class='btn btn-outline-primary'>Cancel</button>".html_safe, account_my_bookings_path %>
-          <% end %>
-        </div>
+<div class="signup-container">
+  <div class="container2">
+    <h1>Add a Review</h1>
+    <div class="simple-form" >
+              <%= simple_form_for([@superhero, @booking, @review]) do |f| %>
+              <%= f.input :description,
+                          label_html: { class: 'inputlabel'} %>
+              <%= f.input :rating, collection: 0..5,
+                          label_html: { class: 'inputlabel'} %>
+              <button type="submit", class="btn btn-outline-primary">Save</button>
+               <%= link_to "<button class='btn btn-outline-primary'>Cancel</button>".html_safe, account_my_bookings_path %>
+              <% end %>
+    </div>
+  </div>
+</div>
