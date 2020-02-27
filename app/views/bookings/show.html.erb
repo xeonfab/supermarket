@@ -4,7 +4,7 @@
       <%= image_tag "tick.png", alt: "Le Wagon", width: 100 %>
       <h1><strong>Booking Done</strong></h1>
       <h2><%= @booking.start_date %> - <%= @booking.end_date %></h2>
-      <%= link_to "See my bookings", superheroes_path, class: "btn bookings-btn" %>
+      <%= link_to "See my bookings", account_my_bookings_path, class: "btn bookings-btn" %>
       <h3><%= @booking.superhero.name %> Superhero</h3>
       <br>
       <%= cl_image_tag @booking.superhero.photo.key , alt: "Le Wagon", width: 130 %>
