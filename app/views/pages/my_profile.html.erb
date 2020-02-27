@@ -7,14 +7,17 @@
 </div>
 
 <div class="profile-container">
-      <div>
-        <h1>Your Profile</h1>
-      </div>
-      <div class="prof-img">
-      <%= cl_image_tag(current_user.avatar.key, width: 225, height: 225, crop: :thumb, radius: :max) %>
-      </div>
-      <p>First name: <%= current_user.first_name %></p>
-      <p>Last name: <%= current_user.last_name %></p>
-      <p>E-mail address: <%= current_user.email %></p>
-      <p>Account created: <%= current_user.created_at %></p>
+  <div>
+    <h1>Your Profile</h1>
+  </div>
+  <div class="prof-img">
+  <%= cl_image_tag(current_user.avatar.key, width: 225, height: 225, crop: :thumb, radius: :max) %>
+  </div>
+  <p>First name: <%= current_user.first_name %></p>
+  <p>Last name: <%= current_user.last_name %></p>
+  <p>E-mail address: <%= current_user.email %></p>
+  <p>Account created: <%= current_user.created_at %></p>
 </div>
+
+
+
