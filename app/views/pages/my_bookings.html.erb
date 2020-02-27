@@ -13,7 +13,9 @@
       <p>Available</p>
     </div>
     <div class="last">
-      <%= link_to "Add", new_superhero_booking_review_path(review), class: "btn btn-gradient" %>
+      <% if mybooking.review.nil? %>
+      <%= link_to "Add", new_superhero_booking_review_path(mybooking.superhero, mybooking), class: "btn btn-gradient" %>
+      <% end %>
       <p><%= mybooking.superhero.age %></p>
       <p><%= mybooking.superhero.superpower %></p>
        <p><%= mybooking.superhero.brains %></p>
@@ -21,6 +23,11 @@
          <p><%= mybooking.superhero.speed %></p>
           <p><%= mybooking.superhero.location %></p>
            <p><%= mybooking.superhero.price %></p>
+           <% unless mybooking.review.nil? %>
+           <p><%= mybooking.review.description %></p>
+           <p><%= mybooking.review.rating %></p>
+           <% end %>
+
 
     </div>
   </div>
