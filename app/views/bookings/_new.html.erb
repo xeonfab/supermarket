@@ -1,6 +1,7 @@
-<h3>Book a superhero</h3>
-<%= simple_form_for [superhero, booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.button :submit, label: 'Book now', class: "btn btn-primary" %>
-<% end %>
+<div class="d-flex">
+  <%= simple_form_for [superhero, booking] do |f| %>
+    <div><%= f.input :start_date, label: false %></div>
+    <div><%= f.input :end_date, label: false %></div>
+    <div><%= f.button :submit, label: 'Book now', class: "btn show-btn" %></div>
+  <% end %>
+</div>
