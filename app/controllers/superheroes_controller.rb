@@ -35,6 +35,12 @@ class SuperheroesController < ApplicationController
     @superhero = Superhero.find(params[:id])
     @booking = Booking.new
     @reviews = Review.joins(booking: :superhero).where("bookings.superhero_id" => @superhero.id)
+    @markers = [{
+      lat: @superhero.latitude,
+      lng: @superhero.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { superhero: @superhero })
+    }]
+
   end
 
   def new
