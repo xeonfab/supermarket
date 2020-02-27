@@ -1,5 +1,15 @@
 
 <div class="banner-home1">
+    <div class="btn-map">
+      <div></div>
+      <div class="container map-btn">
+      </div>
+    </div>
+</div>
+
+
+
+<div class="search-container">
   <div class="row">
       <div class="col-sm-8 offset-sm-2 search-index">
         <%= form_tag superheroes_path, method: :get do %>
@@ -24,40 +34,34 @@
     </div>
 </div>
 
-<div>
-  <div class="map-position">
-      <div
-        id="map"
-        style="width: 70%;
-        height: 300px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+
+
+<div class="results-container">
+  <div class="left-container">
+    <% @superheroes.each do |superhero| %>
+      <div class="card-superhero">
+        <% if superhero.photo.attached? %>
+          <%= cl_image_tag superhero.photo.key, height: 300, width: 400, crop: :fill %>
+         <% elsif superhero.image %>
+           <%= image_tag superhero[:image], alt: "alttext", class: "card-img-top"  %>
+        <% else %>
+          <p>no photo</p>
+        <% end %>
+        <div class="card-superhero-infos">
+          <h2><%= superhero.name %></h2>
+          <p>Superpower: <%= superhero.superpower %></p>
+          <p>Price: <%= superhero.price %></p>
+          <p>Location: <%= superhero.location %></p>
         </div>
-       <br>
-    </div>
-</div>
-
-<div class="main-container">
-
-  <% @superheroes.each do |superhero| %>
-
-    <div class="card-superhero">
-      <% if superhero.photo.attached? %>
-        <%= cl_image_tag superhero.photo.key, height: 300, width: 400, crop: :fill %>
-       <% elsif superhero.image %>
-         <%= image_tag superhero[:image], alt: "alttext", class: "card-img-top"  %>
-      <% else %>
-        <p>no photo</p>
-      <% end %>
-      <div class="card-superhero-infos">
-        <h2><%= superhero.name %></h2>
-        <p>Superpower: <%= superhero.superpower %></p>
-        <p>Price: <%= superhero.price %></p>
-        <p>Location: <%= superhero.location %></p>
+         <%= link_to "More info", superhero_path(superhero), class: "btn btn-gradient" %>
       </div>
-       <%= link_to "More info", superhero_path(superhero), class: "btn btn-gradient" %>
-    </div>
-  <% end %>
-  <%= link_to "Go back home", root_path, class: "btn btn-gradient" %>
-</div>
+    <% end %>
+  </div>
 
+  <div
+    id="map" class="map-fullpage"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>

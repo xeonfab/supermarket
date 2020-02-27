@@ -1,39 +1,35 @@
-<div class="banner-home">
-  <div class="show-container">
-    <div>
-       <%= render "bookings/new", superhero: @superhero, booking: @booking %>
-    </div>
 
+<div class="card-superhero">
+  <% if @superhero.photo.attached? %>
+    <%= cl_image_tag @superhero.photo.key, height: 300, width: 400, crop: :fill %>
+  <% elsif @superhero.image %>
+    <%= image_tag @superhero[:image], alt: "alttext", class: "card-img-top"  %>
+  <% else %>
+    <p>No Photo</p>
+  <% end %>
 
-    <div class="show-card">
-      <div>
-        <% if @superhero.photo.attached? %>
-          <%= cl_image_tag @superhero.photo.key, height: 250, width: 350, crop: :fill %>
-        <% elsif @superhero.image %>
-          <%= image_tag @superhero[:image], alt: "alttext", class: "card-img-top"  %>
-        <% else %>
-          <p>No Photo</p>
-        <% end %>
-      </div>
-      <div>
-        <h2><%= @superhero.name %></h2>
-        <p><%= @superhero.description %></p>
-        <div class="d-flex justify-content-between">
-          <div class="column">
-            <p>Age: <%= @superhero.age %></p>
-            <p>Superpower: <%= @superhero.superpower %></p>
-            <p>Brains: <%= @superhero.brains %></p>
-            <p>Strength: <%= @superhero.strength %></p>
-          </div>
-          <div class="column attributes-grid">
-            <p>Speed: <%= @superhero.speed %></p>
-            <p>Price: <%= @superhero.price %></p>
-            <p>Location: <%= @superhero.location %></p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="card-superhero-infos">
+    <h2><%= @superhero.name %></h2>
+    <p><%= @superhero.description %></p>
+    <p>Age: <%= @superhero.age %></p>
+    <p>Superpower: <%= @superhero.superpower %></p>
+    <p>Brains: <%= @superhero.brains %></p>
+    <p>Strength: <%= @superhero.strength %></p>
+    <p>Speed: <%= @superhero.speed %></p>
+    <p>Price: <%= @superhero.price %></p>
+    <p>Location: <%= @superhero.location %></p>
 
+  <div
+    id="map" class="map-halfpage"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
+    <%= render "bookings/new", superhero: @superhero, booking: @booking %>
+
+    <%= link_to "Delete", superheroes_path,
+      method: :delete,
+      data: { confirm: "Are you sure?" }, class: 'btn btn-primary' %>
   </div>
 </div>
 
