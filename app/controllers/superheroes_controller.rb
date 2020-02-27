@@ -34,7 +34,7 @@ class SuperheroesController < ApplicationController
   def show
     @superhero = Superhero.find(params[:id])
     @booking = Booking.new
-
+    @reviews = Review.joins(booking: :superhero).where("bookings.superhero_id" => @superhero.id)
   end
 
   def new
