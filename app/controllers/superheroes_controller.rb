@@ -2,9 +2,9 @@ class SuperheroesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show, :new]
 
   def index
-    @superheroes = Superhero.search_global(params[:query])
+    if params[:query].present?
+    @superheroes = Superhero.global_search(params[:query])
     # @superheroes = Superhero.geocoded #returns superheroes with coordinates
-    raise
     @markers = @superheroes.map do |superhero|
       {
         lat: superhero.latitude,
@@ -12,7 +12,11 @@ class SuperheroesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { superhero: superhero })
       }
     end
+    else
+      @superheroes = Superhero.all
+    end
   end
+
 
   def show
     @superhero = Superhero.find(params[:id])
