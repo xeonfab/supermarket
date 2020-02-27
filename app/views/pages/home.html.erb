@@ -4,17 +4,24 @@
       <div class="left-home">
         <h1>Find your best</h1>
         <h1 class="pb-4">Superheroes Cards</h1>
-          <div class="s-bar">
-            <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-            <div class="search-form-control form-group s-bar">
-              <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-              <button name="button" type="submit" class="btn btn-flat">
-                <i class="fas fa-search"></i> Search
-              </button>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8 offset-sm-2">
+                <%= form_tag superheroes_path, method: :get do %>
+                  <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control",
+                    placeholder: "Find a Superhero"
+                  %>
+                  <%= submit_tag "Search", class: "btn btn-primary" %>
+                <% end %>
+                <div id="superheroes">
+                  <% @superheroes.each do |superhero| %>
+                  <% end %>
+                </div>
+              </div>
             </div>
           </div>
-        <% end %>
-      </div>
       <div class="spidercards">
         <%= image_tag "spidercards.png", alt: "Spidercards", width: 450 %>
       </div>

@@ -2,8 +2,20 @@ class PagesController < ApplicationController
  skip_before_action :authenticate_user!, only: [ :home, :my_superheroes ]
 
   def home
-    @superheroes = Superhero.all
-  end
+    if params[:query].present?
+      @superheroes = Superhero.global_search(params[:query])
+    else
+      @superheroes = Superhero.all
+    end
+    # @superheroes = Superhero.geocoded #returns superheroes with coordinates
+    # @markers = @superheroes.map do |superhero|
+    #   {
+    #     lat: superhero.latitude,
+    #     lng: superhero.longitude,
+    #     infoWindow: render_to_string(partial: "info_window", locals: { superhero: superhero })
+    #   }
+
+end
 
   def my_superheroes
     @my_superheroes = Superhero.where(user: current_user)
