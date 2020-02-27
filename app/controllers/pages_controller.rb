@@ -25,6 +25,9 @@ end
       @my_bookings = Booking.where(user: current_user)
   end
 
+  def my_profile
+  end
+
   def destroy
     @superhero = Superhero.find(params[:id])
     @superhero.destroy
