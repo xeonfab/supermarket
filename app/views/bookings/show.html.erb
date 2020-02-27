@@ -2,12 +2,12 @@
   <div class ="container">
     <div class="container2">
       <%= image_tag "tick.png", alt: "Le Wagon", width: 100 %>
-      <h1>Booking Done</h1>
+      <h1><strong>Booking Done</strong></h1>
       <h2><%= @booking.start_date %> - <%= @booking.end_date %></h2>
       <%= link_to "See my bookings", superheroes_path, class: "btn bookings-btn" %>
-      <h3>Spiderman Superhero</h3>
-      <%= image_tag "spidercard.png", alt: "Le Wagon", width: 130 %>
-
+      <h3><%= @booking.superhero.name %> Superhero</h3>
+      <br>
+      <%= cl_image_tag @booking.superhero.photo.key , alt: "Le Wagon", width: 130 %>
     </div>
   </div>
 </div>
