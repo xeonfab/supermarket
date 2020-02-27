@@ -2,9 +2,9 @@ class SuperheroesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show, :new]
 
   def index
-    @superheroes = Superhero.all
-
-    @superheroes = Superhero.geocoded #returns superheroes with coordinates
+    @superheroes = Superhero.search_global(params[:query])
+    # @superheroes = Superhero.geocoded #returns superheroes with coordinates
+    raise
     @markers = @superheroes.map do |superhero|
       {
         lat: superhero.latitude,
