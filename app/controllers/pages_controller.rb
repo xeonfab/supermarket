@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
- skip_before_action :authenticate_user!, only: [ :home, :my_superheroes ]
+ skip_before_action :authenticate_user!, only: [ :home, :my_superheroes, :my_bookings ]
 
  def home
    if params[:query].present?

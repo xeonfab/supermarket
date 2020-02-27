@@ -9,19 +9,25 @@
 }
 
 .card-superhero {
-  border: 2px solid #E7E7E7;
   border-radius: 8px;
-  padding: .5rem;
   margin: 16px;
-  height: 520px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 394px;
+  width: 245px;
+  background: #FFFFFF;
+  box-shadow: 2px 4px 10px #E5E5E5;
+  &:hover {
+    // box-shadow: 4px 8px 10px #E5E5E5;
+  }
+  border-radius: 8px;
+
+
 }
 
 .card-superhero > img {
     height: 250px;
     width: 100%;
     object-fit: cover;
+
 }
 
 .card-superhero h2 {
@@ -32,7 +38,7 @@
 }
 
 .card-superhero p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -41,4 +47,18 @@
 
 .card-superhero .card-superhero-infos {
   padding: 16px;
+
+}
+
+.card-link {
+    text-decoration: none;
+    color: black;
+    padding: 0;
+    margin: 0;
+  &:hover {
+    text-decoration: none;
+    color: black;
+
+  }
+
 }
