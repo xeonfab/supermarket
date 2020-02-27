@@ -8,10 +8,10 @@ class Superhero < ApplicationRecord
 
     include PgSearch::Model
       pg_search_scope :global_search,
-        against: [ :name, :price ],
-        associated_against: {
-          user: [ :first_name, :last_name ]
-        },
+        against: [ :name, :price, :location, :age ],
+        # associated_against: {
+        #   user: [ :first_name, :last_name ]
+        # },
         using: {
           tsearch: { prefix: true }
         }

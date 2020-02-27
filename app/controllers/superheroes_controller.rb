@@ -3,7 +3,23 @@ class SuperheroesController < ApplicationController
 
   def index
     if params[:query].present?
-    @superheroes = Superhero.global_search(params[:query])
+      # sql_query = " \
+      #   superheroes.name @@ :query \
+      #   OR superheroes.location @@ :query \
+      #   OR users.first_name @@ :query \
+      #   OR users.last_name @@ :query \
+      # "
+      # @superheroes = Superhero.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+      terms = params[:query].gsub(/\s+/m, ' ').strip.split(" ")
+      @superheroes = []
+      terms.each do |term|
+        @superheroes << Superhero.global_search(term).to_a
+      end
+      @superheroes = @superheroes.flatten
+
+    else
+      @superheroes = Superhero.all
+    end
     # @superheroes = Superhero.geocoded #returns superheroes with coordinates
     @markers = @superheroes.map do |superhero|
       {
@@ -12,16 +28,13 @@ class SuperheroesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { superhero: superhero })
       }
     end
-    else
-      @superheroes = Superhero.all
-    end
   end
 
 
   def show
     @superhero = Superhero.find(params[:id])
     @booking = Booking.new
-
+    @reviews = Review.joins(booking: :superhero).where("bookings.superhero_id" => @superhero.id)
   end
 
   def new

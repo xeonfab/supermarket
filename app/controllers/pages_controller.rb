@@ -1,12 +1,20 @@
 class PagesController < ApplicationController
  skip_before_action :authenticate_user!, only: [ :home, :my_superheroes ]
 
-  def home
-    if params[:query].present?
-      @superheroes = Superhero.global_search(params[:query])
-    else
-      @superheroes = Superhero.all
-    end
+ def home
+   if params[:query].present?
+    # sql_query = " \
+    #   superheroes.name @@ :query \
+    #   OR superheroes.location @@ :query \
+    #   OR users.first_name @@ :query \
+    #   OR users.last_name @@ :query \
+    # "
+    # @superheroes = Superhero.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    @superheroes = Superhero.global_search(params[:query])
+   else
+     @superheroes = Superhero.all
+   end
+
     # @superheroes = Superhero.geocoded #returns superheroes with coordinates
     # @markers = @superheroes.map do |superhero|
     #   {
@@ -23,6 +31,9 @@ end
 
   def my_bookings
       @my_bookings = Booking.where(user: current_user)
+  end
+
+  def my_profile
   end
 
   def destroy
