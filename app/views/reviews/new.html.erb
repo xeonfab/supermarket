@@ -1,0 +1,9 @@
+<h1>hey</h1>
+<div class="simple-form" >
+          <%= simple_form_for(@review) do |f| %>
+          <%= f.input :description %>
+          <%= f.input :rating, collection: 0..5 %>
+          <button type="submit" class="btn btn-outline-primary">Submit</button>
+           <%= link_to "<button class='btn btn-outline-primary'>Cancel</button>".html_safe, root_path %>
+          <% end %>
+        </div>

@@ -13,6 +13,7 @@
       <p>Available</p>
     </div>
     <div class="last">
+      <%= link_to "Add", new_superhero_booking_review_path(review), class: "btn btn-gradient" %>
       <p><%= mybooking.superhero.age %></p>
       <p><%= mybooking.superhero.superpower %></p>
        <p><%= mybooking.superhero.brains %></p>
