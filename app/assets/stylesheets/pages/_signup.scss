@@ -9,9 +9,33 @@
 
 .signupflex {
   display: flex;
-  padding-right: 32px;
+  justify-content: center;
 }
 
 .columns {
   padding: 16px;
+}
+
+.signup-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.widthinput {
+  width: 300px;
+  margin: 0;
+}
+
+.inputlabel {
+  color: white;
+}
+
+.container2 a {
+  color: white;
+}
+
+.container2 body {
+  color: white !important;
 }

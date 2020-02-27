@@ -6,7 +6,7 @@
 <div container-cards>
   <% @my_bookings.each do |mybooking| %>
   <div class="card-superhero-account">
-    <img src="https://unsplash.com/photos/WjZ4eaHq9G4">
+    <%= cl_image_tag mybooking.superhero.photo.key, alt: "alttext", class: "card-img-top"  %>
     <div class="middle">
       <h2><%= mybooking.superhero.name %></h2>
       <p><%= mybooking.superhero.description %></p>
@@ -14,7 +14,7 @@
     </div>
     <div class="last">
       <% if mybooking.review.nil? %>
-      <%= link_to "Add", new_superhero_booking_review_path(mybooking.superhero, mybooking), class: "btn btn-gradient" %>
+      <%= link_to "Add review", new_superhero_booking_review_path(mybooking.superhero, mybooking), class: "btn btn-gradient" %>
       <% end %>
       <p><%= mybooking.superhero.age %></p>
       <p><%= mybooking.superhero.superpower %></p>

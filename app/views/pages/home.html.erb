@@ -32,24 +32,7 @@
 <div class="main-container">
 
   <% @superheroes.each do |superhero| %>
-
-    <div class="card-superhero">
-      <% if superhero.photo.attached? %>
-        <%= cl_image_tag superhero.photo.key, height: 300, width: 400, crop: :fill %>
-       <% elsif superhero.image %>
-         <%= image_tag superhero[:image], alt: "alttext", class: "card-img-top"  %>
-      <% else %>
-        <p>no photo</p>
-      <% end %>
-      <div class="card-superhero-infos">
-        <h2><%= superhero.name %></h2>
-        <p>Superpower: <%= superhero.superpower %></p>
-        <p>Price: <%= superhero.price %></p>
-        <p>Location: <%= superhero.location %></p>
-      </div>
-      <%= link_to "More info", superhero_path(superhero), class: "btn btn-gradient" %>
-    </div>
+    <%= render partial: 'shared/card', locals: { superhero: superhero } %>
   <% end %>
-  <%= link_to "All Superheroes", superheroes_path, class: "nav-link home-btn" %>
 
 </div>
