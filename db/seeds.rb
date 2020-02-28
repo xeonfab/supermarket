@@ -26,7 +26,7 @@ ollie = User.create!(
   password: "password",
   password_confirmation: "password")
 
-ollie.avatar.attach(io: spider_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
+ollie.avatar.attach(io: ollie_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
 
 tomuser = User.create!(
   first_name: "tom",
@@ -35,7 +35,7 @@ tomuser = User.create!(
   password: "password",
   password_confirmation: "password")
 spider_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
-tom.avatar.attach(io: spider_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
+tomuser.avatar.attach(io: tomuser_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
 
 
 fabienuser = User.create!(
@@ -54,7 +54,7 @@ seanuser = User.create!(
   password: "password",
   password_confirmation: "password")
 spider_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
-sean.avatar.attach(io: spider_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
+seanuser.avatar.attach(io: seanuser_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
 
 
 sheilauser = User.create!(
@@ -63,8 +63,8 @@ sheilauser = User.create!(
   email:"sheila@gmail.com",
   password: "password",
   password_confirmation: "password")
-spider_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
-sheila.avatar.attach(io: spider_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
+sheilauser_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
+sheilauser.avatar.attach(io: sheilauser_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
 
 
 # to add the user create before. Just copy paste this below....
