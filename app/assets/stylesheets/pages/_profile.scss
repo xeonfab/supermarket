@@ -17,3 +17,41 @@
 .prof-img {
   padding: 16px;
 }
+
+.banner-home1 {
+  background-size: cover;
+  background-position: center;
+  background-image: asset-url("background-home.jpg");
+  height: 80px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.banner-home1 .active {
+color: #FE346E;
+font-weight: bold;
+  font-family: Montserrat;
+  &:hover{
+    color: #FE346E;
+  }
+
+}
+
+.nav1 {
+padding-left: 100px;
+}
+
+.nav1-link {
+color: white;
+padding: 10px;
+margin: 4px 14px;
+font-size: 18px;
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+    color: white;
+  }
+}
+
+
