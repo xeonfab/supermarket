@@ -3,33 +3,39 @@
   <a class="nav-link" href="<%= account_my_bookings_path %>">Bookings</a>
   <a class="nav-link" href="<%= account_my_profile_path %>">Profile</a>
 </nav>
-<div container-cards>
+
+<div class="account-container">
   <% @my_bookings.each do |mybooking| %>
-  <div class="card-superhero-account">
-    <%= cl_image_tag mybooking.superhero.photo.key, alt: "alttext", class: "card-img-top"  %>
-    <div class="middle">
-      <h2><%= mybooking.superhero.name %></h2>
-      <p><%= mybooking.superhero.description %></p>
-      <p>Available</p>
+    <div class="account-card">
+      <div class="card-main">
+        <div class="account-image">
+          <%= cl_image_tag mybooking.superhero.photo.key, alt: "alttext" %>
+        </div>
+        <div class="account-info">
+          <h2><%= mybooking.superhero.name %></h2>
+            <p>Description: <%= mybooking.superhero.description %></p>
+            <p>Age: <%= mybooking.superhero.age %></p>
+            <p>Superpower: <%= mybooking.superhero.superpower %></p>
+            <p>Brains: <%= mybooking.superhero.brains %></p>
+            <p>Strength: <%= mybooking.superhero.strength %></p>
+            <p>Speed: <%= mybooking.superhero.speed %></p>
+            <p>Location: <%= mybooking.superhero.location %></p>
+            <p>Price: <%= mybooking.superhero.price %></p>
+        </div>
+        <div class ="account-options">
+        </div>
+      </div>
+        <div class="card-reviews">
+          <% if mybooking.review.nil? %>
+            <%= link_to "Add review", new_superhero_booking_review_path(mybooking.superhero, mybooking), class: "btn btn-gradient" %>
+          <% end %>
+          <% unless mybooking.review.nil? %>
+            <div class="account-reviews">
+              <p><%= mybooking.review.description %></p>
+              <p><%= mybooking.review.rating %></p>
+            </div>
+          <% end %>
+        </div>
     </div>
-    <div class="last">
-      <% if mybooking.review.nil? %>
-      <%= link_to "Add review", new_superhero_booking_review_path(mybooking.superhero, mybooking), class: "btn btn-gradient" %>
-      <% end %>
-      <p><%= mybooking.superhero.age %></p>
-      <p><%= mybooking.superhero.superpower %></p>
-       <p><%= mybooking.superhero.brains %></p>
-        <p><%= mybooking.superhero.strength %></p>
-         <p><%= mybooking.superhero.speed %></p>
-          <p><%= mybooking.superhero.location %></p>
-           <p><%= mybooking.superhero.price %></p>
-           <% unless mybooking.review.nil? %>
-           <p><%= mybooking.review.description %></p>
-           <p><%= mybooking.review.rating %></p>
-           <% end %>
-
-
-    </div>
-  </div>
   <% end %>
 </div>
