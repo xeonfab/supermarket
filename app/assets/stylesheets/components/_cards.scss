@@ -1,11 +1,18 @@
-.main-container {
-  margin: 0 auto;
-  width: 1200px;
+.last-cards {
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: auto;
   grid-gap: 1rem;
   align-items: center;
+  font-family: Montserrat;
+  font-style: normal;
+}
+
+.main-container {
+   margin: 0 auto;
+    width: 1073px;
+
 }
 
 .card-superhero {
@@ -14,6 +21,7 @@
   height: 394px;
   width: 245px;
   background: #FFFFFF;
+  padding: 9px;
   box-shadow: 2px 4px 10px #E5E5E5;
   &:hover {
     // box-shadow: 4px 8px 10px #E5E5E5;
@@ -21,11 +29,12 @@
   border-radius: 8px;
 
 
+
 }
 
 .card-superhero > img {
-    height: 250px;
-    width: 100%;
+    height: 281.48px;
+    width: 232.43px;
     object-fit: cover;
 
 }
@@ -37,16 +46,10 @@
   text-align: center;
 }
 
-.card-superhero p {
-  font-size: 14px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
+
 
 .card-superhero .card-superhero-infos {
-  padding: 16px;
+  padding-top: 8px;
 
 }
 
@@ -58,7 +61,24 @@
   &:hover {
     text-decoration: none;
     color: black;
-
   }
+}
 
+.price {
+font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+text-align: right;
+color: #000000;
+}
+
+.card-superhero-infos p{
+  margin: 0;
+}
+
+.card-superhero-infos h5 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
 }

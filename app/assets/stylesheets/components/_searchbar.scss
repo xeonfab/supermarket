@@ -8,7 +8,15 @@
   top: 0px;
   bottom: 0px;
   right: 0px;
-  border-radius: 8px;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  &:hover {
+    background-color: #FE346E;
+  }
 }
 
 .s-bar {
@@ -17,11 +25,23 @@
 }
 .search-form-control .form-control {
   padding: 8px;
-  height: 2.8rem;
-  width: 420px;
+  height: 4.3rem;
+  width: 583px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
-  border-radius: 8px;
+  border-radius: 5px;
+}
+
+.search-form-control input[type="text"] {
+  width: 583px;
+ height: 4.3rem;
+ padding-right: 177px;
+}
+
+.search-form-control input[type="submit"] {
+  margin-left: 177px;
+  width: 177px;
+ height: 4.3rem;
 }
 
 .search-form-control .form-control:focus {
@@ -32,7 +52,6 @@
 
 .spidercards {
   display: flex;
-  align-items: cen
 }
 
 
@@ -47,13 +66,13 @@
 .container-home{
   display: flex;
   align-items: center;
-  height: 560px;
+  height: 583px;
   justify-content: center;
 }
 
 .left-home {
-  padding-top: 80px;
-  padding-left: 40px;
+  padding-top: 50px;
+  padding-right: 50px;
 }
 
 .left-home h1 {
@@ -61,7 +80,7 @@
 }
 
 .left-home .btn-flat {
-  margin-right: 290px;
+
  // <!-- <div id="superheroes">
             // <% @superheroes.each do |superhero| %>
             // <% end %>
