@@ -26,7 +26,7 @@ ollie = User.create!(
   password: "password",
   password_confirmation: "password")
 
-ollie_image = URI.open("https://res.cloudinary.com/supermarket/image/upload/v1582859346/54NJbTpnbtRf6iggWb1TfChG.png")
+ollie_image = URI.open("https://res.cloudinary.com/supermarket/image/upload/v1582861031/tom_flzw52.jpg")
 ollie.avatar.attach(io: ollie_image, filename: 'ollieuser.jpg', content_type: 'image/jpg')
 
 tomuser = User.create!(
