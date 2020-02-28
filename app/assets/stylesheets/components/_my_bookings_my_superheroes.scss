@@ -21,11 +21,21 @@
   // display: flex;
   // align-items: center;
 }
+.container-mysuper {
+  width:1300px;
+  margin: 0 auto;
+}
 
+.padddd {
+  padding: 20px;
+}
+
+.account-options {
+  margin-bottom: 14px;
+}
 
 .booking-page-split {
   width: 66%;
-  display: flex;
   justify-content: space-between;
 }
 
@@ -34,8 +44,20 @@
   flex-direction: row;
 }
 
+#price-booking {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FE346E;
+  border-radius: 10px;
+  height: 30px;
+  width: 45px;
+  margin-top:10px;
+}
 #img-book {
   border-radius: 8px;
+  height: 240px;
 }
 
 .width1 {
@@ -48,6 +70,10 @@
 
 .name-desc {
   padding: 16px;
+  h2 {
+    margin: 0px !important;
+    padding: 0px !important;
+  }
 }
 
 
