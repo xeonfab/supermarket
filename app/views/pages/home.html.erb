@@ -25,9 +25,11 @@
 </div>
 
 <div class="main-container">
-  <h2>Last superheroes</h2></div>
+  <div class="title-hp">
+    <h2>Latest superheroes</h2>
+  </div>
   <div class="last-cards">
-    <% last8 = @superheroes.last(8) %>
+    <% last8 = @superheroes.last(10) %>
     <% last8.each do |superhero| %>
       <%= render partial: 'shared/card', locals: { superhero: superhero } %>
     <% end %>

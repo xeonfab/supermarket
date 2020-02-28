@@ -1,7 +1,7 @@
 .show-container {
-  display: inline-block;
   justify-content: center;
-  width: 900px;
+  width: 800px;
+  margin:0 auto;
 }
 
 .show-btn {
@@ -17,31 +17,87 @@
     line-height: 24px
   }
 
-.show-card {
+.booking-date {
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px #C4C4C4;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.booking-input {
+  width: 250px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.star1 {
+  color: gold;
+}
+
+.star-pad {
+  padding: 20px;
+  width: 150px;
+}
+.review-avatar {
+  padding-right: 25px;
+}
+
+.booking-content {
   display: flex;
   border-radius: 8px;
   margin: 16px;
   height: 440px;
   width: 880px;
+  padding-top: 16px;
 }
 
-.show-card h2 {
+.booking-content h2 {
   color: white;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
-  font-size: 25px;
-  line-height: 30px;
-  padding-bottom: 24px;
+  font-size: 40px;
+  line-height: 49px;
+}
+
+#price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FE346E;
+  border-radius: 10px;
+  height: 30px;
+  width: 45px;
 }
 
 
-.show-card p {
-  color: white;
+.booking-content p {
   font-family: Montserrat;
+  color: white;
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.booking-content-container {
+  padding: 16px;
+  width: 520px;
+}
+
+#avatar-price {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 8px;
+  padding-right: 41px;
+}
+#h2-booking {
+  padding: 0px;
+  padding-bottom: 12px;
 }
 
 // .attributes-grid {
@@ -51,30 +107,70 @@
 .review {
   display: flex;
   justify-content: space-between;
+  width: 881px;
+  margin: 0 auto;
+  padding: 10pxpx;
+
 }
 
-.glyphicon {
-  color: black;
+.marginzero{
+  margin: 0 auto;
+  width: 881px;
+  padding-bottom: 25px;
 }
 
-.glyphicon-star {
-  color: black;
+#card-review {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px #F5F3F3;
+  border-radius: 8px;
+  margin-bottom: 16px;
 }
+
+#reviewtext {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #0C3293;
+}
+
+.card-img-top {
+  box-shadow: 3px 4px 0px #9B9772, inset 0px 0px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  margin-right: 4px;
+}
+#reviewtext1 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #8A8787;
+}
+
 
 
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 100px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+}
+
+#avatarpad {
+  padding-left: 15px;
 }
 
 .card-product p {
@@ -88,4 +184,5 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
 
