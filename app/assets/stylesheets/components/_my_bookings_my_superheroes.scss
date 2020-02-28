@@ -1,6 +1,7 @@
 .account-container {
   margin: 0 auto;
   width: 1300px;
+  padding: 30px;
   // display: grid;
   // grid-template-columns: repeat(4, 1fr);
   // grid-auto-rows: auto;
@@ -42,6 +43,7 @@
   // object-fit: cover;
   height: 200px;
   width: 300px;
+  padding: 20px;
 }
 
 .account-image img {
@@ -53,12 +55,14 @@
   height: 100%;
   width: 66%;
   object-fit: cover;
+  padding: 20px;
 }
 
 .account-options {
   height: 100%;
   width: 33%;
   object-fit: cover;
+  padding: 20px;
 }
 
 .card-reviews {

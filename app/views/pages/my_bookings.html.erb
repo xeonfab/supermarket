@@ -15,7 +15,8 @@
         </div>
         <div class="account-info">
           <h2><%= mybooking.superhero.name %></h2>
-            <p>Description: <%= mybooking.superhero.description %></p>
+            <div class="details">
+              <p>Description: <%= mybooking.superhero.description %></p>
             <p>Age: <%= mybooking.superhero.age %></p>
             <p>Superpower: <%= mybooking.superhero.superpower %></p>
             <p>Brains: <%= mybooking.superhero.brains %></p>
@@ -23,21 +24,33 @@
             <p>Speed: <%= mybooking.superhero.speed %></p>
             <p>Location: <%= mybooking.superhero.location %></p>
             <p>Price: <%= mybooking.superhero.price %></p>
-        </div>
+          </div>
+
         <div class ="account-options">
-        </div>
-      </div>
-        <div class="card-reviews">
           <% if mybooking.review.nil? %>
             <%= link_to "Add review", new_superhero_booking_review_path(mybooking.superhero, mybooking), class: "btn btn-gradient" %>
           <% end %>
           <% unless mybooking.review.nil? %>
             <div class="account-reviews">
-              <p><%= mybooking.review.description %></p>
-              <p><%= mybooking.review.rating %></p>
+              <div class="review card-product card-product-infos" id="card-review">
+
+          <div class="d-flex">
+            <div class="star-pad">
+              <% mybooking.review.rating.times do  %>
+                <i class="fas fa-star star1"></i>
+              <% end %>
+            </div>
+            <div>
+              <p id="reviewtext1"><%= mybooking.review.created_at %></p>
+              <p id="reviewtext"><%= mybooking.review.description %></p>
+            </div>
+          </div>
+      </div>
             </div>
           <% end %>
         </div>
+      </div>
+
     </div>
   <% end %>
 </div>
