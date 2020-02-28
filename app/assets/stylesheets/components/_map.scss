@@ -2,7 +2,7 @@
   // width: 100%;
   // position: sticky;
   // top: 0;
-  flex: 0 0 600px;
+  flex: 0 0 580px;
   // width: 600px;
 }
 
@@ -31,4 +31,9 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+}
+
+.map-index {
+  position: absolute;
+  right: 0;
 }
