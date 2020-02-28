@@ -1,17 +1,17 @@
 .results-container {
   margin: 0 auto;
-  width: 1200px;
+  width: 100%;
   height:70vh;
   display: flex;
+  justify-content: space-between;
 }
 
 .left-container {
   // margin: 0 auto;
-  width: 600px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: auto;
-  grid-gap: 1rem;
+  grid-gap: 12px;
   align-items: center;
   overflow: auto;
   height: 100%;
