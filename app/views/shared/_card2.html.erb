@@ -1,0 +1,17 @@
+<%= link_to superhero_path(superhero), class: "card-link-wrap" do %>
+  <div class="card-superhero2">
+    <% if superhero.photo.attached? %>
+      <%= cl_image_tag superhero.photo.key, height: 232.43, width: 281.48 %>
+     <% elsif superhero.image %>
+       <%= image_tag superhero[:image], alt: "alttext", class: "card-img-top"  %>
+    <% else %>
+      <p>no photo</p>
+    <% end %>
+    <div class="card-superhero-infos">
+      <h6><%= superhero.superpower %></h6>
+      <p><%= superhero.location %></p>
+      <p class="price">$<%= superhero.price %></p>
+    </div>
+  </div>
+<% end %>
+

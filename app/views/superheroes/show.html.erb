@@ -1,16 +1,14 @@
-<div class="banner-home">
+<div class="banner-home" style="height: 850px">
   <div class="show-container">
     <div class="booking-date">
        <%= render "bookings/new", superhero: @superhero, booking: @booking %>
     </div>
-
-
     <div class="booking-content">
       <div>
         <% if @superhero.photo.attached? %>
-          <%= cl_image_tag @superhero.photo.key, height: 350, width: 270, crop: :fill, class: "card-img-top" %>
+          <%= cl_image_tag @superhero.photo.key, width: 350, class: "card-img-top1" %>
         <% elsif @superhero.image %>
-          <%= image_tag @superhero[:image], alt: "alttext", class: "card-img-top"  %>
+          <%= image_tag @superhero[:image], alt: "alttext", class: "card-img-top1"  %>
         <% else %>
           <p>No Photo</p>
         <% end %>
@@ -18,8 +16,8 @@
       <div class="booking-content-container">
       <h2 id="h2-booking"><%= @superhero.name %></h2>
         <div>
-          <p>Superpower: <%= @superhero.superpower %></p>
-          <p><%= @superhero.description %></p>
+          <h4 style="color:white;">Superpower: <%= @superhero.superpower %></h4>
+          <p style="color:white, font-size:20px"><%= @superhero.description %></p>
           <div class="d-flex justify-content-between">
             <div class="column">
               <p>Age: <%= @superhero.age %></p>

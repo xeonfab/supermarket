@@ -2,7 +2,7 @@
   <div class="container-home">
     <div class="d-flex">
       <div class="left-home">
-        <h1 style="padding-bottom: 50px">Find your best #348 <br><strong>Superheroes Cards</strong></h1>
+        <h1 style="padding-bottom: 50px">Rent your favourite <br><strong>Superheroes</strong></h1>
         <div class="search-form-control form-group">
           <%= form_tag superheroes_path, method: :get do %>
             <%= text_field_tag :query,
@@ -29,7 +29,7 @@
     <h2>Latest superheroes</h2>
   </div>
   <div class="last-cards">
-    <% last8 = @superheroes.last(10) %>
+    <% last8 = @superheroes.last(8) %>
     <% last8.each do |superhero| %>
       <%= render partial: 'shared/card', locals: { superhero: superhero } %>
     <% end %>

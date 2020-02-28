@@ -1,8 +1,10 @@
-<nav class="nav" style="background-color: grey; height: 73px; align-items: center;">
-  <a class="nav-link active" href="<%= account_my_superheroes_path %>">My Superheroes</a>
-  <a class="nav-link" href="<%= account_my_bookings_path %>">Bookings</a>
-  <a class="nav-link" href="<%= account_my_profile_path %>">Profile</a>
-</nav>
+<div class="banner-home1">
+    <nav class="nav1" style="">
+      <a class="nav1-link" href="<%= account_my_superheroes_path %>">My Superheroes</a>
+      <a class="nav1-link active" href="<%= account_my_bookings_path %>">Bookings</a>
+       <a class="nav1-link" href="<%= account_my_profile_path %>">Profile</a>
+    </nav>
+</div>
 
 <div class="account-container">
   <% @my_bookings.each do |mybooking| %>
@@ -39,38 +41,3 @@
   <% end %>
 </div>
 
-
-
-
-
-<br>
-<br>
-<br>
-
-<div class="card mb-3" style="width: 800px;">
-  <% @my_bookings.each do |mybooking| %>
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <%= cl_image_tag mybooking.superhero.photo.key, alt: "alttext", width: 300, height: 400 %>
-      </div>
-      <div class="col-md-8">
-        <div class="d-flex">
-          <div class="card-body">
-            <h2 class="card-title"><%= mybooking.superhero.name %></h2>
-            <p class="card-text">Description: <%= mybooking.superhero.description %></p>
-            <p class="card-text">Age: <%= mybooking.superhero.age %></p>
-            <p class="card-text">Superpower: <%= mybooking.superhero.superpower %></p>
-            <p class="card-text">Brains: <%= mybooking.superhero.brains %></p>
-            <p class="card-text">Strength: <%= mybooking.superhero.strength %></p>
-            <p class="card-text">Speed: <%= mybooking.superhero.speed %></p>
-            <p class="card-text">Location: <%= mybooking.superhero.location %></p>
-          </div>
-          <div class ="account-options">
-              <%= link_to "Add review", new_superhero_booking_review_path(mybooking.superhero, mybooking), class: "btn btn-gradient" %>
-              <p>Price: <%= mybooking.superhero.price %></p>
-            </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
