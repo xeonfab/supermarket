@@ -1,12 +1,10 @@
 <div>
   <div class="banner-home1">
-    <div class="d-flex align-items-center banner">
-      <div class="container d-flex align-items-center">
-        <div class="nav-item">
-          <%= link_to "Back", request.referer.present? ? request.referer : root_path, class: "back-button"%>
-        </div>
-        <h2 style="font-size: 25px">    Edit your Superhero</h2>
+    <div class="container d-flex align-items-center add-superhero">
+      <div class="nav-item">
+        <%= link_to "Back", request.referer.present? ? request.referer : root_path, class: "back-button"%>
       </div>
+      <h2 style="font-size: 25px">    Edit your Superhero</h2>
     </div>
   </div>
 
