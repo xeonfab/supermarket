@@ -25,7 +25,8 @@ class SuperheroesController < ApplicationController
       {
         lat: superhero.latitude,
         lng: superhero.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { superhero: superhero })
+        infoWindow: render_to_string(partial: "info_window", locals: { superhero: superhero }),
+        image_url: helpers.asset_url('lewagon')
       }
     end
   end
@@ -38,7 +39,8 @@ class SuperheroesController < ApplicationController
     @markers = [{
       lat: @superhero.latitude,
       lng: @superhero.longitude,
-      infoWindow: render_to_string(partial: "info_window", locals: { superhero: @superhero })
+      infoWindow: render_to_string(partial: "info_window", locals: { superhero: @superhero }),
+      image_url: helpers.asset_url('lewagon')
     }]
 
   end

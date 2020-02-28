@@ -12,9 +12,6 @@
     // box-shadow: 4px 8px 10px #E5E5E5;
   }
   border-radius: 8px;
-
-
-
 }
 
 .card-superhero > img {
@@ -38,7 +35,46 @@
 
 }
 
-.card-link {
+
+
+.card-superhero2 {
+  border-radius: 8px;
+  margin-top: 16px;
+  // margin-left: 8px;
+  height: 394px;
+  width: 245px;
+  background: #FFFFFF;
+  padding: 9px;
+  box-shadow: 2px 4px 10px #E5E5E5;
+  &:hover {
+    // box-shadow: 4px 8px 10px #E5E5E5;
+  }
+  border-radius: 8px;
+}
+
+.card-superhero2 > img {
+    height: 281.48px;
+    width: 232.43px;
+    object-fit: cover;
+
+}
+
+.card-superhero2 h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+
+
+.card-superhero2 .card-superhero-infos {
+  padding-top: 8px;
+
+}
+
+
+.card-link-wrap {
     text-decoration: none;
     color: black;
     padding: 0;

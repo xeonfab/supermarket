@@ -1,4 +1,4 @@
-<%= link_to superhero_path(superhero), class: "card-link" do %>
+<%= link_to superhero_path(superhero), class: "card-link-wrap" do %>
 <div class="card-superhero">
   <% if superhero.photo.attached? %>
     <%= cl_image_tag superhero.photo.key, height: 232.43, width: 281.48 %>

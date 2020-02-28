@@ -11,8 +11,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: auto;
-  grid-gap: 12px;
+  grid-gap: 24px;
   align-items: center;
   overflow: auto;
   height: 100%;
+  margin-left: 16px;
 }
