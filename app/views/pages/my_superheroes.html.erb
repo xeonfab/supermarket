@@ -5,27 +5,40 @@
        <a class="nav1-link" href="<%= account_my_profile_path %>">Profile</a>
     </nav>
 </div>
-<div container-cards>
-  <% @my_superheroes.each do |mysuperhero| %>
-  <div class="card-superhero-account">
-    <%= cl_image_tag mysuperhero.photo.key, alt: "alttext", class: "card-img-top"  %>
-    <div class="middle">
-      <h2><%= mysuperhero.name %></h2>
-      <p><%= mysuperhero.description %></p>
-      <p>Available</p>
-    </div>
-    <div class="last">
-      <%= link_to "Edit", edit_superhero_path(mysuperhero), class: "btn btn-gradient" %>
-      <%= link_to "Delete", superhero_path(mysuperhero), method: :delete, class: "btn btn-gradient" %>
-      <p><%= mysuperhero.age %></p>
-      <p><%= mysuperhero.superpower %></p>
-       <p><%= mysuperhero.brains %></p>
-        <p><%= mysuperhero.strength %></p>
-         <p><%= mysuperhero.speed %></p>
-          <p><%= mysuperhero.location %></p>
-           <p><%= mysuperhero.price %></p>
 
-    </div>
+<div class="container-mysuper">
+  <div class="account-container">
+    <% @my_superheroes.each do |mysuperhero| %>
+      <div class="account-card">
+        <div class="card-main">
+          <div id="img-book">
+            <%= cl_image_tag mysuperhero.photo.key, alt: "alttext", width: 200, height: 270 %>
+          </div>
+          <div class="booking-page-split">
+            <div class="name-desc">
+              <h2 class="heading2"><%= mysuperhero.name %></h2>
+              <p>Description: <%= mysuperhero.description %></p>
+            </div>
+            <div class="content-hub d-flex">
+              <div class="padddd">
+                <p>Age: <%= mysuperhero.age %></p>
+                <p>Superpower: <%= mysuperhero.superpower %></p>
+                <p>Brains: <%= mysuperhero.brains %></p>
+              </div>
+              <div class="padddd">
+                <p>Strength: <%= mysuperhero.strength %></p>
+                <p>Speed: <%= mysuperhero.speed %></p>
+                <p>Location: <%= mysuperhero.location %></p>
+              </div>
+            </div>
+          </div>
+          <div class ="account-options">
+           <%= link_to "Edit", edit_superhero_path(mysuperhero), class: "btn btn-gradient" %>
+            <%= link_to "Delete", superhero_path(mysuperhero), method: :delete, class: "btn btn-gradient" %>
+            <p id="price-booking">$<%= mysuperhero.price %></p>
+          </div>
+        </div>
   </div>
-  <% end %>
+    <% end %>
 </div>
+
