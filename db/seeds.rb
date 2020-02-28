@@ -17,7 +17,7 @@ User.destroy_all
 
 puts "Making the Superheroes"
 
-spider_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
+# spider_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
 
 ollie = User.create!(
   first_name: "Ollie",
@@ -26,7 +26,8 @@ ollie = User.create!(
   password: "password",
   password_confirmation: "password")
 
-ollie.avatar.attach(io: spider_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
+ollie_image = URI.open("https://res.cloudinary.com/supermarket/image/upload/v1582859346/54NJbTpnbtRf6iggWb1TfChG.png")
+ollie.avatar.attach(io: ollie_image, filename: 'ollieuser.jpg', content_type: 'image/jpg')
 
 tomuser = User.create!(
   first_name: "tom",
@@ -34,8 +35,8 @@ tomuser = User.create!(
   email:"tom@gmail.com",
   password: "password",
   password_confirmation: "password")
-spider_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
-tom.avatar.attach(io: spider_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
+tomuser_image = URI.open("https://res.cloudinary.com/supermarket/image/upload/v1582861031/tom_flzw52.jpg")
+tomuser.avatar.attach(io: tomuser_image, filename: 'tomuser.jpg', content_type: 'image/jpg')
 
 
 fabienuser = User.create!(
@@ -44,8 +45,8 @@ fabienuser = User.create!(
   email:"fabien@gmail.com",
   password: "password",
   password_confirmation: "password")
-spider_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
-fabien.avatar.attach(io: spider_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
+fabienuser_image = URI.open("https://res.cloudinary.com/supermarket/image/upload/v1582861082/fab_hqbnl4.jpg")
+fabienuser.avatar.attach(io: fabienuser_image, filename: 'fabienuser.jpg', content_type: 'image/jpg')
 
 seanuser = User.create!(
   first_name: "Sean",
@@ -53,8 +54,8 @@ seanuser = User.create!(
   email:"sean@gmail.com",
   password: "password",
   password_confirmation: "password")
-spider_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
-sean.avatar.attach(io: spider_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
+seanuser_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
+seanuser.avatar.attach(io: seanuser_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
 
 
 sheilauser = User.create!(
@@ -63,8 +64,8 @@ sheilauser = User.create!(
   email:"sheila@gmail.com",
   password: "password",
   password_confirmation: "password")
-spider_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
-sheila.avatar.attach(io: spider_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
+sheilauser_image = URI.open("https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306001/436169/apiibcz85__65409.1566749349.jpg?c=2&imbypass=on")
+sheilauser.avatar.attach(io: sheilauser_image, filename: 'spiderman.jpg', content_type: 'image/jpg')
 
 
 # to add the user create before. Just copy paste this below....
