@@ -2,13 +2,13 @@
   <div class="container-home">
     <div class="d-flex">
       <div class="left-home">
-        <h1>Need a saviour? Rent one.</h1>
+        <h1 style="padding-bottom: 50px">Find your best #348 <br><strong>Superheroes Cards</strong></h1>
         <div class="search-form-control form-group">
           <%= form_tag superheroes_path, method: :get do %>
             <%= text_field_tag :query,
               params[:query],
               class: "form-control string required",
-              placeholder: "Find a Superhero" %>
+              placeholder: "Search a superhero, city..." %>
             <%= submit_tag "Search", class: "btn btn-flat" %>
           <% end %>
           <div id="superheroes">
@@ -18,18 +18,20 @@
         </div>
       </div>
       <div class="spidercards">
-        <%= image_tag "spidercards.png", alt: "Spidercards", height: 450 %>
+        <%= image_tag "cards-home.png", alt: "Spidercards", width: 536 %>
       </div>
      </div>
    </div>
 </div>
 
 <div class="main-container">
-
-  <% @superheroes.each do |superhero| %>
-    <%= render partial: 'shared/card', locals: { superhero: superhero } %>
-  <% end %>
-
+  <h2>Last superheroes</h2></div>
+  <div class="last-cards">
+    <% last8 = @superheroes.last(8) %>
+    <% last8.each do |superhero| %>
+      <%= render partial: 'shared/card', locals: { superhero: superhero } %>
+    <% end %>
+  </div>
 </div>
 
 
